@@ -10,3 +10,17 @@ module "argocd_prod" {
   cluster_name  = "demo-prod"
   chart_version = "5.39.1"
 }
+
+module "argocd_dev_root" {
+  source             = "./terraform_argocd_root_mk8s"
+  cluster_name       = "demo-dev"
+  git_source_path    = "demo-dev/applications"
+  git_source_repoURL = "git@github.com:DITVTVTVT/argocd.git"
+}
+
+module "argocd_prod_root" {
+  source             = "./terraform_argocd_root_mk8s"
+  cluster_name       = "demo-prod"
+  git_source_path    = "demo-prod/applications"
+  git_source_repoURL = "git@github.com:DITVTVTVT/argocd.git"
+}
