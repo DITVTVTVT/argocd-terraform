@@ -2,13 +2,13 @@
 module "argocd_dev" {
   source        = "./terraform_argocd_mk8s"
   cluster_name  = "demo-dev"
-  chart_version = "5.46.2"
+  chart_version = "7.7.22"
 }
 
 module "argocd_prod" {
   source        = "./terraform_argocd_mk8s"
   cluster_name  = "demo-prod"
-  chart_version = "5.39.1"
+  chart_version = "7.7.22"
 }
 
 module "argocd_dev_root" {
